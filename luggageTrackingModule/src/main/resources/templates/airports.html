@@ -60,20 +60,20 @@
         </thead>
         <tbody>
           <tr th:each="airport : ${airports}">
-            <th scope="row">[[${airport.airportId}]]</th>
+            <th scope="row">[[${airport.airportID}]]</th>
             <td>[[${airport.airportName}]]</td>
             <td>[[${airport.departingAirport}]]</td>
             <td>[[${airport.arrivalAirport}]]</td>
             <td>
               <!-- A link to edit an airport -->
-              <a th:href="@{'/airport/' + ${airport.airportId}}" 
+               <a th:href="@{'/airport/' + ${airport.AirportID}}" 
               	title="Edit this airport"
                 class="fa-regular fa-pen-to-square icon-dark"></a>
-              &nbsp; >
+              &nbsp; 
               
               <!-- A link to delete an airport -->
-              <a th:href="@{'/airport/delete/' + ${airport.airportId}}" 
-              th:airportCode="${airport.airportName}" id="btnDelete"
+              <a th:href="@{'/airport/delete/' + ${airport.AirportID}}" 
+              th:airportName="${airport.airportName}" id="btnDelete"
                 title="Delete this airport" 
                 class="fa-regular fa-trash-can icon-dark btn-delete"></a>
 
@@ -118,9 +118,9 @@
         e.preventDefault();
         link = $(this);
 
-        airportName = link.attr("airportName");
+        airportAirportID = link.attr("airportAirportID");
         $("#yesBtn").attr("href", link.attr("href"));
-        $("#confirmText").html("Do you want to delete the  \<strong\>" + airportName + "\<\/strong\>?");
+        $("#confirmText").html("Do you want to delete the  \<strong\>" + airportAirportID + "\<\/strong\>?");
         $("#confirmModal").modal();
       });
 

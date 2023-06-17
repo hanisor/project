@@ -24,24 +24,24 @@ public class PassengerRESTController {
 	@Autowired
 	private PassengerRepository passengerRepository;
 	
-	@DeleteMapping("{passengerId}")
-	public ResponseEntity<HttpStatus> deletePassenger(@PathVariable long passengerId)
+	@DeleteMapping("{PassengerID}")
+	public ResponseEntity<HttpStatus> deletePassenger(@PathVariable long PassengerID)
 	{
-		passengerRepository.deleteById(passengerId);
+		passengerRepository.deleteById(PassengerID);
 		
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	@GetMapping
-	public List<Passenger> getPassenger()
+	public List<Passenger> getPassengerID()
 	{
 		return passengerRepository.findAll();
 	}
 	
-	@GetMapping ("{passengerId}")
-	public Passenger getPassenger(@PathVariable long passengerId )
+	@GetMapping ("{PassengerID}")
+	public Passenger getPassengerID(@PathVariable long PassengerID )
 	{
-		Passenger passenger = passengerRepository.findById(passengerId).get();
+		Passenger passenger = passengerRepository.findById(PassengerID).get();
 		
 		return passenger;
 	}

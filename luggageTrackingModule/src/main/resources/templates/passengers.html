@@ -53,33 +53,31 @@
           <tr>
             <th scope="col">Passenger Id</th>
             <th scope="col">Passenger Name</th>
-            <th scope="col">IC Number</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Email</th>
             <th scope="col">Gender</th>
-            <th scope="col">Action</th> 
+            <!-- <th scope="col">Action</th>  -->
           </tr>
         </thead>
         <tbody>
           <tr th:each="passenger : ${passengers}">
-            <th scope="row">[[${passenger.passengerId}]]</th>
+            <th scope="row">[[${passenger.PassengerID}]]</th>
             <td>[[${passenger.name}]]</td>
-            <td>[[${passenger.IcNumber}]]</td>
             <td>[[${passenger.phoneNumber}]]</td>
             <td>[[${passenger.email}]]</td>
             <td>[[${passenger.gender}]]</td>
             <td>
               <!-- A link to edit an airport -->
-              <a th:href="@{'/passenger/' + ${passenger.passengerId}}" 
+              <!-- <a th:href="@{'/passenger/' + ${passenger.passengerID}}" 
               	title="Edit this passenger"
                 class="fa-regular fa-pen-to-square icon-dark"></a>
-              &nbsp;>
+              &nbsp; -->
               
               <!-- A link to delete an passenger -->
-              <a th:href="@{'/passenger/delete/' + ${passenger.passengerId}}" 
+              <!-- <a th:href="@{'/passenger/delete/' + ${passenger.passengerID}}" 
               th:passengerName="${passenger.name}" id="btnDelete"
                 title="Delete this passenger" 
-                class="fa-regular fa-trash-can icon-dark btn-delete"></a> 
+                class="fa-regular fa-trash-can icon-dark btn-delete"></a> -->
 
             </td> 
           </tr>
@@ -122,16 +120,16 @@
         e.preventDefault();
         link = $(this);
 
-        passengerName = link.attr("name");
+        passengerPassengerID = link.attr("passengerPassengerID");
         $("#yesBtn").attr("href", link.attr("href"));
-        $("#confirmText").html("Do you want to delete  \<strong\>" + name + "\<\/strong\>?");
+        $("#confirmText").html("Do you want to delete  \<strong\>" + passengerPassengerID + "\<\/strong\>?");
         $("#confirmModal").modal();
       });
 
       $("#btnClear").on("click", function (e) {
         e.preventDefault();
         $("#keyword").text("");
-        window.location = "[[@{/passenger/list}]]";
+        window.location = "[[@{/passengers/list}]]";
       });
     });
   </script>
