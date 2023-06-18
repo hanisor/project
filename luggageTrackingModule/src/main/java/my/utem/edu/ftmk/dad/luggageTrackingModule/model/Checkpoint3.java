@@ -1,11 +1,18 @@
 package my.utem.edu.ftmk.dad.luggageTrackingModule.model;
 
+import java.util.Date;
+import java.sql.Time;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table (name = "cp3")
@@ -26,10 +33,14 @@ public class Checkpoint3 {
 	}	
 	
 	@Column (name = "Date")
-	private String Date;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	private Date Date;
 	
 	@Column (name = "Time")
-	private String Time;
+	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "00:00:00")
+	private Time Time;
 	
 	@Column (name = "TruckID")
 	private String TruckID;
@@ -37,19 +48,19 @@ public class Checkpoint3 {
 	@Column (name = "LuggageID")
 	private String LuggageID;
 
-	public String getDate() {
+	public Date getDate() {
 		return Date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		Date = date;
 	}
 
-	public String getTime() {
+	public Time getTime() {
 		return Time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Time time) {
 		Time = time;
 	}
 

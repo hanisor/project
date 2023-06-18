@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.*;
 
 
 @Entity
@@ -28,10 +30,22 @@ public class Checkpoint4 {
 		cp4ID = cp4id;
 	}
 	
-	@Column (name = "Date")
-	private String Date;
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target(ElementType.FIELD)
+	public @interface Columns {
+	    Column[] value();
+	}
 	
-	@Column (name = "Time")
+	@Columns({
+        @Column(name = "Date"),
+        @Column(columnDefinition = "DATE DEFAULT CURRENT_DATE")
+    })
+    private Date Date;
+	
+	@Columns({
+		@Column (name = "Time"),
+        @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    })
 	private Time Time;
 	
 	@Column (name = "FlightID")
@@ -40,11 +54,11 @@ public class Checkpoint4 {
 	@Column (name = "LuggageID")
 	private String LuggageID;
 
-	public String getDate() {
+	public Date getDate() {
 		return Date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		Date = date;
 	}
 
