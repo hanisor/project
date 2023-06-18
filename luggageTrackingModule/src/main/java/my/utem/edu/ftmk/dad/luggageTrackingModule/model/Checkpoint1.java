@@ -13,31 +13,77 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "Checkpoint1")
+@Table (name = "cp1")
 public class Checkpoint1 {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column (name = "Checkpoint1Id")
+	@Column (name = "cp1ID")
 	private int Checkpoint1Id;
 	
-	@Column (name = "CheckpointDate")
+	@Column (name = "Date")
 	private Date CheckpointDate;
 	
-	@Column (name = "CheckpointTime")
+	@Column (name = "Time")
 	private Time CheckpointTime;
-
 	
 	@ManyToOne
-	@JoinColumn (name = "AirportId")
-	private Airport airport;
+	@JoinColumn (name = "AirportID")
+	private Airport AirportID;
 
 	@ManyToOne
-	@JoinColumn (name = "LuggageId")
-	private Luggage luggage;
-	
+	@JoinColumn (name = "LuggageID")
+	private Luggage LuggageID;
 
 	public int getCheckpoint1Id() {
+		return Checkpoint1Id;
+	}
+
+	public void setCheckpoint1Id(int checkpoint1Id) {
+		Checkpoint1Id = checkpoint1Id;
+	}
+
+	public Date getCheckpointDate() {
+		return CheckpointDate;
+	}
+
+	public void setCheckpointDate(Date checkpointDate) {
+		CheckpointDate = checkpointDate;
+	}
+
+	public Time getCheckpointTime() {
+		return CheckpointTime;
+	}
+
+	public void setCheckpointTime(Time checkpointTime) {
+		CheckpointTime = checkpointTime;
+	}
+
+	public Airport getAirportID() {
+		return AirportID;
+	}
+
+	public void setAirportID(Airport airportID) {
+		AirportID = airportID;
+	}
+
+	public Luggage getLuggageID() {
+		return LuggageID;
+	}
+
+	public void setLuggageID(Luggage luggageID) {
+		LuggageID = luggageID;
+	}
+
+
+
+	
+	
+	
+	
+	
+	
+	/*public int getCheckpoint1Id() {
 		return Checkpoint1Id;
 	}
 
@@ -75,7 +121,7 @@ public class Checkpoint1 {
 
 	public void setCheckpointTime(Time checkpointTime) {
 		CheckpointTime = checkpointTime;
-	}
+	}*/
 	
 	
 

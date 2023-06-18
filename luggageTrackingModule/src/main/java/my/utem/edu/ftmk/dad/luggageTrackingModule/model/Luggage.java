@@ -10,46 +10,33 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Luggage")
+@Table(name = "luggage")
 public class Luggage {
 	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column (name = "LuggageId")
+	@Column (name = "LuggageID")
 	private int LuggageId;
 	
-	@Column (name = "LuggageWeight")
-	private int LuggageWeight; 	 
-	
 	@ManyToOne
-	@JoinColumn (name = "PassengerId")
-	private Passenger passenger; 	
-	
-	
+	@JoinColumn (name = "PassengerID")
+	private Passenger passenger;
+
 	public int getLuggageId() {
 		return LuggageId;
 	}
+
 	public void setLuggageId(int luggageId) {
 		LuggageId = luggageId;
 	}
-	
-	public int getLuggageWeight() {
-		return LuggageWeight;
-	}
-	public void setLuggageWeight(int luggageWeight) {
-		LuggageWeight = luggageWeight;
-	}
-	
+
 	public Passenger getPassenger() {
 		return passenger;
 	}
+
 	public void setPassenger(Passenger passenger) {
 		this.passenger = passenger;
-	}
-	
-	
-	
-	
+	} 	
 	
 }

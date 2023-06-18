@@ -8,52 +8,48 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "Airport")
+@Table (name = "airport")
 public class Airport {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column (name = "AirportId")
-	private int AirportId;
-	
-	@Column (name = "AirportName")
-	private String AirportName;
+	@Column (name = "AirportID")
+	private int AirportID;
 	
 	@Column (name = "DepartingAirport")
 	private String DepartingAirport;
 	
 	@Column (name = "ArrivalAirport")
 	private String ArrivalAirport;
-	
-	
-	
-	
-	public int getAirportId() {
-		return AirportId;
+
+	public int getAirportID() {
+		return AirportID;
 	}
-	public void setAirportId(int airportId) {
-		AirportId = airportId;
+
+	public void setAirportID(int airportID) {
+		AirportID = airportID;
 	}
-	public String getAirportName() {
-		return AirportName;
-	}
-	public void setAirportName(String airportName) {
-		AirportName = airportName;
-	}
-	
+
 	public String getDepartingAirport() {
 		return DepartingAirport;
 	}
+
 	public void setDepartingAirport(String departingAirport) {
 		DepartingAirport = departingAirport;
 	}
-	
+
 	public String getArrivalAirport() {
 		return ArrivalAirport;
 	}
+
 	public void setArrivalAirport(String arrivalAirport) {
 		ArrivalAirport = arrivalAirport;
 	}
+	
+	
+	
+	
+	
 
 	
 	
