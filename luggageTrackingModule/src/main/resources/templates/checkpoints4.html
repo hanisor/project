@@ -52,16 +52,20 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">Flight ID</th>
-            <!-- <th scope="col">Flight Name</th>
-            <th scope="col">Departing Time</th>
-            <th scope="col">Arrival Time</th>
-            <th scope="col">Departing Date</th>
-            <th scope="col">Arriving Date</th> -->
+            <th scope="col">Luggage ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+<!--             <th scope="col">Departing Date</th> -->
+<!--             <th scope="col">Arriving Date</th> -->
           </tr>
         </thead>
         <tbody>
           <tr th:each="checkpoint4 : ${checkpoints4}">
             <th scope="row">[[${checkpoint4.FlightID}]]</th>
+            <td>[[${checkpoint4.getLuggageID()}]]</td>
+            <td>[[${checkpoint4.getDate()}]]</td>
+            <td>[[${checkpoint4.getTime()}]]</td>
+            
     
             <td>
               <!-- A link to edit an checkpoint4 -->

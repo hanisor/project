@@ -52,19 +52,26 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">Truck ID</th>
+            <th scope="col">Luggage ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
           </tr>
         </thead>
         <tbody>
           <tr th:each="checkpoint3 : ${checkpoints3}">
             <th scope="row">[[${checkpoint3.TruckID}]]</th>
+            <td>[[${checkpoint3.getLuggageID()}]]</td>
+            <td>[[${checkpoint3.getDate()}]]</td>
+            <td>[[${checkpoint3.getTime()}]]</td>
+            
             <td>
-              A link to edit an checkpoint3
+              <!-- A link to edit an checkpoint3 -->
               <a th:href="@{'/checkpoint3/' + ${checkpoint3.TruckID}}" 
               	title="Edit this TruckID"
                 class="fa-regular fa-pen-to-square icon-dark"></a>
               &nbsp;
               
-              A link to delete an checkpoint3
+              <!-- A link to delete an checkpoint3 -->
               <a th:href="@{'/checkpoint3/delete/' + ${checkpoint3.TruckID}}" 
               th:TruckID="${checkpoint3.TruckID}" id="btnDelete"
                 title="Delete this TruckID" 

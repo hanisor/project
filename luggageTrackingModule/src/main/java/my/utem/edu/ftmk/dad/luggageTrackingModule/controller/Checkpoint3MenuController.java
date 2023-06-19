@@ -68,7 +68,7 @@ public class Checkpoint3MenuController {
 		HttpEntity<Checkpoint3> request = new HttpEntity<Checkpoint3>(checkpoint3);
 		
 		String checkpoint3Response = "";
-		
+
 		if (checkpoint3.getcp3ID()>0) {
 			//This block update a new order type and send request as PUT
 			
