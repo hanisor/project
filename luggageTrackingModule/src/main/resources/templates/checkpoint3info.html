@@ -43,26 +43,47 @@
             </div>
             </div>
             
-             <div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="*{Date}">Date</label>
-            <div class="col-sm-9">
-              <input type="text" th:field="*{Date}" required minlength="1" maxlength="100" class="form-control"
-                id="Date" />
-            </div>
-            </div>
+<!--              <div class="form-group row"> -->
+<!--             <label class="col-sm-3 col-form-label" for="*{Date}">Date</label> -->
+<!--             <div class="col-sm-9"> -->
+<!--               <input type="text" th:field="*{Date}" required minlength="1" maxlength="100" class="form-control" -->
+<!--                 id="Date" /> -->
+<!--             </div> -->
+<!--             </div> -->
             
-             <div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="*{Time}">Time</label>
-            <div class="col-sm-9">
-              <input type="text" th:field="*{Time}" required minlength="1" maxlength="100" class="form-control"
-                id="Time" />
-            </div>
-            </div>
+            <div class="form-group row">
+			    <label class="col-sm-3 col-form-label" for="currentDate">Date</label>
+			    <div class="col-sm-9">
+			      <input type="text" id="currentDate" class="form-control" disabled />
+			    </div>
+			  </div>
             
-
-            
-          </div>
+<!--              <div class="form-group row"> -->
+<!--             <label class="col-sm-3 col-form-label" for="*{Time}">Time</label> -->
+<!--             <div class="col-sm-9"> -->
+<!--               <input type="text" th:field="*{Time}" required minlength="1" maxlength="100" class="form-control" -->
+<!--                 id="Time" /> -->
+<!--             </div> -->
+<!--             </div> -->
+<!--           </div> -->
           
+            <div class="form-group row">
+			    <label class="col-sm-3 col-form-label" for="currentTime">Time</label>
+			    <div class="col-sm-9">
+			      <input type="text" id="currentTime" class="form-control" disabled />
+			    </div>
+			  </div>
+			</div>
+          
+          <script>
+			  // Get the current date and time
+			  var currentDate = new Date().toLocaleDateString();
+			  var currentTime = new Date().toLocaleTimeString();
+			
+			  // Set the values in the HTML input fields
+			  document.getElementById("currentDate").value = currentDate;
+			  document.getElementById("currentTime").value = currentTime;
+			</script>
           
 
          <!--  <div class="form-group row">

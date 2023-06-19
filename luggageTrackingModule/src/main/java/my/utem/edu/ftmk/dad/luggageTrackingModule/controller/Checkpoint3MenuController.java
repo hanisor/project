@@ -82,7 +82,7 @@ public class Checkpoint3MenuController {
 		System.out.println(checkpoint3Response);
 		
 		//Redirect request to display a list of checkpoint3
-		return "redirect:/checkpoint3/list";
+		return "redirect:/checkpoint4/0";
 	}
 	
 	/*

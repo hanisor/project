@@ -1,7 +1,7 @@
 package my.utem.edu.ftmk.dad.luggageTrackingModule.model;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,8 +9,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 
 
@@ -32,12 +30,10 @@ public class Checkpoint4 {
 	}
 	
     @Column(name = "Date")
-    @Temporal(TemporalType.DATE)
-    private Date Date;
+    private LocalDate Date;
 	
 	@Column (name = "Time")
-	@Temporal(TemporalType.TIME)
-	private Time Time;
+	private LocalTime Time;
 	
 	@Column (name = "FlightID")
 	private String FlightID;
@@ -45,19 +41,19 @@ public class Checkpoint4 {
 	@Column (name = "LuggageID")
 	private String LuggageID;
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return Date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		Date = date;
 	}
 
-	public Time getTime() {
+	public LocalTime getTime() {
 		return Time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(LocalTime time) {
 		Time = time;
 	}
 

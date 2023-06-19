@@ -1,6 +1,8 @@
 package my.utem.edu.ftmk.dad.luggageTrackingModule.controller;
 
 import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.http.HttpStatus;
@@ -8,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.PutMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,4 +47,15 @@ public class Checkpoint4RESTController {
 		
 		return checkpoint4;
 	}
+	
+	@PostMapping
+	public Checkpoint4 insertCheckpoint4(@RequestBody Checkpoint4 checkpoint4)
+	{
+		LocalDate Date = LocalDate.now();
+		LocalTime Time = LocalTime.now();
+		checkpoint4.setDate(Date);
+		checkpoint4.setTime(Time);
+		return checkpoint4Repository.save(checkpoint4);
+	}
+	
 }
