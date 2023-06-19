@@ -1,0 +1,52 @@
+<header th:fragment="header">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" th:href="@{/passenger/list}">
+      Master Information
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavbar">
+      <ul class="navbar-nav">
+      	<!-- A menu link to lists airport  -->
+       
+     <!--<li class="nav-item">
+          <a class="nav-link" th:href="@{/passenger/list}">Passengers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/cp1/list}"> list Checkpoint 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/luggage/list}">Luggage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/cp2/list}">list checkpoint 2</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" th:href="@{/flight/list}">list flight</a>
+        </li>
+        
+        <!-- A menu link to add a new passenger-->
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/passenger/0}">Passenger Registration</a>
+        </li> -->
+        
+        <!-- A menu link to add a new luggage-->
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/luggage/0}">Luggage Registration</a>
+        </li>
+        
+        <!-- A menu link to add a new checkpoint-->
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/cp1/0}">Checkpoint 1</a>
+        </li>
+       
+        <!-- A menu link to add a new checkpoint2-->
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/cp2/0}">Checkpoint 2</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </nav>
+</header>
