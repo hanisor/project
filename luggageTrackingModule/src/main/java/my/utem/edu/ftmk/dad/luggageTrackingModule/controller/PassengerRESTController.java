@@ -33,13 +33,13 @@ public class PassengerRESTController {
 	}
 	
 	@GetMapping
-	public List<Passenger> getPassenger()
+	public List<Passenger> getPassengerID()
 	{
 		return passengerRepository.findAll();
 	}
 	
 	@GetMapping ("{PassengerID}")
-	public Passenger getPassenger(@PathVariable long PassengerID )
+	public Passenger getPassengerID(@PathVariable long PassengerID )
 	{
 		Passenger passenger = passengerRepository.findById(PassengerID).get();
 		
@@ -57,12 +57,5 @@ public class PassengerRESTController {
 	{
 		return passengerRepository.save(passenger);
 	}
-	
-	@GetMapping("/passenger/{PassengerIC}")
-	public Passenger findPassengerByIC (@PathVariable String PassengerIC)
-	{
-		return passengerRepository.findPassengerByIC(PassengerIC);
-	}
-	
 
 }

@@ -16,7 +16,7 @@ public class Passenger {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column (name = "PassengerID")
-	private int PassengerID;
+	private int passengerId;
 	
 	@Column (name = "Name")
 	private String Name;
@@ -31,28 +31,18 @@ public class Passenger {
 	private String Email;
 	
 	@Column (name = "Gender")
-	private String Gender;
+	private char Gender;
 	
 	@ManyToOne
 	@JoinColumn (name = "FlightID")
 	private Flight flight;
 
-
-
-	public int getPassengerID() {
-		return PassengerID;
+	public int getPassengerId() {
+		return passengerId;
 	}
 
-	public void setPassengerID(int passengerID) {
-		PassengerID = passengerID;
-	}
-
-	public Flight getFlight() {
-		return flight;
-	}
-
-	public void setFlight(Flight flight) {
-		this.flight = flight;
+	public void setPassengerId(int passengerId) {
+		this.passengerId = passengerId;
 	}
 
 	public String getName() {
@@ -87,13 +77,22 @@ public class Passenger {
 		Email = email;
 	}
 
-	public String getGender() {
+	public char getGender() {
 		return Gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(char gender) {
 		Gender = gender;
 	}
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
 	
 	
 	

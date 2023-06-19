@@ -1,103 +1,83 @@
-package my.utem.edu.ftmk.dad.luggageTrackingModule.model;
-
-
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-
-@Entity
-@Table (name = "trackingrecord")
-public class Trackingrecord {
-	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column (name = "TrackingRecordID")
-	private int TrackingRecordID;
-	
-	@Column (name = "RecordedBy")
-	private String RecordedBy;
-	
-	@ManyToOne
-	@JoinColumn (name = "Cp1ID")
-	private CP1 Cp1;
-	
-	@ManyToOne
-	@JoinColumn (name = "Cp2ID")
-	private CP2 Cp2;
-	
-	@ManyToOne
-	@JoinColumn (name = "Cp3ID")
-	private CP3 Cp3;
-	
-	@ManyToOne
-	@JoinColumn (name = "Cp4ID")
-	private CP4 Cp4;
-	
-	@ManyToOne
-	@JoinColumn (name = "LuggageID")
-	private Luggage luggage;
-
-	public int getTrackingRecordID() {
-		return TrackingRecordID;
-	}
-
-	public void setTrackingRecordID(int trackingRecordID) {
-		TrackingRecordID = trackingRecordID;
-	}
-
-	public String getRecordedBy() {
-		return RecordedBy;
-	}
-
-	public void setRecordedBy(String recordedBy) {
-		RecordedBy = recordedBy;
-	}
-
-	public CP1 getCp1() {
-		return Cp1;
-	}
-
-	public void setCp1(CP1 cp1) {
-		Cp1 = cp1;
-	}
-
-	public CP2 getCp2() {
-		return Cp2;
-	}
-
-	public void setCp2(CP2 cp2) {
-		Cp2 = cp2;
-	}
-
-	public CP3 getCp3() {
-		return Cp3;
-	}
-
-	public void setCp3(CP3 cp3) {
-		Cp3 = cp3;
-	}
-
-	public CP4 getCp4() {
-		return Cp4;
-	}
-
-	public void setCp4(CP4 cp4) {
-		Cp4 = cp4;
-	}
-
-	public Luggage getLuggage() {
-		return luggage;
-	}
-
-	public void setLuggage(Luggage luggage) {
-		this.luggage = luggage;
-	}
-
-	
-}
+/*
+ * package my.utem.edu.ftmk.dad.luggageTrackingModule.model;
+ * 
+ * import java.sql.Date; import java.sql.Time;
+ * 
+ * import jakarta.persistence.Column; import jakarta.persistence.Entity; import
+ * jakarta.persistence.GeneratedValue; import
+ * jakarta.persistence.GenerationType; import jakarta.persistence.Id; import
+ * jakarta.persistence.JoinColumn; import jakarta.persistence.Table;
+ * 
+ * @Entity
+ * 
+ * @Table (name = "trackingrecord") public class Trackingrecord {
+ * 
+ * @Id
+ * 
+ * @GeneratedValue (strategy = GenerationType.IDENTITY)
+ * 
+ * @Column (name = "TrackingRecordID") private int TrackingRecordID;
+ * 
+ * @Column (name = "CheckInDate") private Date CheckInDate;
+ * 
+ * @Column (name = "CheckInTime") private Time CheckInTime;
+ * 
+ * @Column (name = "RecordedBy") private String recordBy;
+ * 
+ * @JoinColumn(name = "Cp1ID") private Checkpoint1 checkpoint1;
+ * 
+ * @JoinColumn(name = "Cp2ID") private Checkpoint2 checkpoint2;
+ * 
+ * @JoinColumn(name = "Cp3ID") private Checkpoint3 checkpoint3;
+ * 
+ * @JoinColumn(name = "Cp4ID") private Checkpoint4 checkpoint4;
+ * 
+ * @JoinColumn(name = "LuggageID") private Luggage luggage;
+ * 
+ * // @Column (name = "Luggage") // private Luggage luggage; // // @Column (name
+ * = "Flight") // private Flight flight; // // @Column (name = "Shuttletruck")
+ * // private Shuttletruck shuttletruck; // // @Column (name = "Conveyorlane")
+ * // private Conveyorlane conveyorlane;
+ * 
+ * 
+ * public Luggage getLuggage() { return luggage; } public void
+ * setLuggage(Luggage luggage) { this.luggage = luggage; } public int
+ * getTrackingRecordID() { return TrackingRecordID; } public void
+ * setTrackingRecordID(int trackingRecordID) { TrackingRecordID =
+ * trackingRecordID; }
+ * 
+ * public Date getCheckInDate() { return CheckInDate; } public void
+ * setCheckInDate(Date checkInDate) { CheckInDate = checkInDate; }
+ * 
+ * public Time getCheckInTime() { return CheckInTime; } public void
+ * setCheckInTime(Time checkInTime) { CheckInTime = checkInTime; }
+ * 
+ * public String getRecordBy() { return recordBy; } public void
+ * setRecordBy(String recordBy) { this.recordBy = recordBy; } public Checkpoint1
+ * getCheckpoint1() { return checkpoint1; } public void
+ * setCheckpoint1(Checkpoint1 checkpoint1) { this.checkpoint1 = checkpoint1; }
+ * public Checkpoint2 getCheckpoint2() { return checkpoint2; } public void
+ * setCheckpoint2(Checkpoint2 checkpoint2) { this.checkpoint2 = checkpoint2; }
+ * public Checkpoint3 getCheckpoint3() { return checkpoint3; } public void
+ * setCheckpoint3(Checkpoint3 checkpoint3) { this.checkpoint3 = checkpoint3; }
+ * public Checkpoint4 getCheckpoint4() { return checkpoint4; } public void
+ * setCheckpoint4(Checkpoint4 checkpoint4) { this.checkpoint4 = checkpoint4; }
+ * 
+ * 
+ * 
+ * 
+ * 
+ * // public Luggage getLuggage() { // return luggage; // } // public void
+ * setLuggage(Luggage luggage) { // this.luggage = luggage; // } // // public
+ * Flight getFlight() { // return flight; // } // public void setFlight(Flight
+ * flight) { // this.flight = flight; // } // // public Shuttletruck
+ * getShuttletruck() { // return shuttletruck; // } // public void
+ * setShuttletruck(Shuttletruck shuttletruck) { // this.shuttletruck =
+ * shuttletruck; // } // // public Conveyorlane getConveyorlane() { // return
+ * conveyorlane; // } // public void setConveyorlane(Conveyorlane conveyorlane)
+ * { // this.conveyorlane = conveyorlane; // } //
+ * 
+ * 
+ * 
+ * }
+ */

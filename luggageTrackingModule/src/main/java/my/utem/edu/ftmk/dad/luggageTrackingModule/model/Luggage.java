@@ -17,34 +17,26 @@ public class Luggage {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column (name = "LuggageID")
-	private int LuggageID;
-		 
+	private int LuggageId;
 	
 	@ManyToOne
-	@JoinColumn (name = "passengerID")
-	private Passenger passenger; 	
-	
-	
-	public int getLuggageID() {
-		return LuggageID;
+	@JoinColumn (name = "PassengerID")
+	private Passenger passenger;
+
+	public int getLuggageId() {
+		return LuggageId;
 	}
-	public void setLuggageID(int luggageID) {
-		LuggageID = luggageID;
+
+	public void setLuggageId(int luggageId) {
+		LuggageId = luggageId;
 	}
-	
-	
+
 	public Passenger getPassenger() {
 		return passenger;
 	}
-	
+
 	public void setPassenger(Passenger passenger) {
 		this.passenger = passenger;
-	}
-	
-	
-	
-	
-	
-	
+	} 	
 	
 }

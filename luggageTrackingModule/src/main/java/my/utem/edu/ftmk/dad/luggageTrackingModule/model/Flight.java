@@ -25,17 +25,14 @@ public class Flight {
 	@Column (name = "FlightName")
 	private String FlightName;
 	
-	@Column (name = "DepartingDate")
-	private Date DepartingDate;
-	
-	@Column (name = "ArrivingDate")
-	private Date ArrivingDate;
-	
 	@Column (name = "DepartingTime")
 	private Time DepartingTime;
 	
 	@Column (name = "ArrivingTime")
 	private Time ArrivingTime;
+	
+	@Column (name = "DepartingDate")
+	private Date DepartingDate;
 	
 	@Column (name = "FlightNo")
 	private String FlightNo;
@@ -60,22 +57,6 @@ public class Flight {
 		FlightName = flightName;
 	}
 
-	public Date getDepartingDate() {
-		return DepartingDate;
-	}
-
-	public void setDepartingDate(Date departingDate) {
-		DepartingDate = departingDate;
-	}
-
-	public Date getArrivingDate() {
-		return ArrivingDate;
-	}
-
-	public void setArrivingDate(Date arrivingDate) {
-		ArrivingDate = arrivingDate;
-	}
-
 	public Time getDepartingTime() {
 		return DepartingTime;
 	}
@@ -90,6 +71,14 @@ public class Flight {
 
 	public void setArrivingTime(Time arrivingTime) {
 		ArrivingTime = arrivingTime;
+	}
+
+	public Date getDepartingDate() {
+		return DepartingDate;
+	}
+
+	public void setDepartingDate(Date departingDate) {
+		DepartingDate = departingDate;
 	}
 
 	public String getFlightNo() {
@@ -108,7 +97,4 @@ public class Flight {
 		this.airport = airport;
 	}
 	
-	
-	
-
 }

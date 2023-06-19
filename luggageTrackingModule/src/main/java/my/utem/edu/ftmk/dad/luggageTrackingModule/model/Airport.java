@@ -21,13 +21,11 @@ public class Airport {
 	
 	@Column (name = "ArrivalAirport")
 	private String ArrivalAirport;
-	
-	
-	
-	
+
 	public int getAirportID() {
 		return AirportID;
 	}
+
 	public void setAirportID(int airportID) {
 		AirportID = airportID;
 	}
@@ -35,16 +33,23 @@ public class Airport {
 	public String getDepartingAirport() {
 		return DepartingAirport;
 	}
+
 	public void setDepartingAirport(String departingAirport) {
 		DepartingAirport = departingAirport;
 	}
-	
+
 	public String getArrivalAirport() {
 		return ArrivalAirport;
 	}
+
 	public void setArrivalAirport(String arrivalAirport) {
 		ArrivalAirport = arrivalAirport;
 	}
+	
+	
+	
+	
+	
 
 	
 	

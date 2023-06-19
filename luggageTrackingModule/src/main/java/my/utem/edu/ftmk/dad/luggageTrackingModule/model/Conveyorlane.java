@@ -17,8 +17,8 @@ public class Conveyorlane {
 	@Column (name = "ConveyorLaneID")
 	private int ConveyorLaneID;
 	
-	@Column (name = "LaneNumber")
-	private String LaneNumber;
+	@Column (name = "Destination")
+	private String Destination;
 	
 	public int getConveyorLaneID() {
 		return ConveyorLaneID;
@@ -27,14 +27,12 @@ public class Conveyorlane {
 		ConveyorLaneID = conveyorLaneID;
 	}
 	
-	public String getLaneNumber() {
-		return LaneNumber;
+	public String getDestination() {
+		return Destination;
 	}
-	public void setLaneNumber(String laneNumber) {
-		LaneNumber = laneNumber;
+	public void setDestination(String destination) {
+		Destination = destination;
 	}
-	
-	
 	
 	
 

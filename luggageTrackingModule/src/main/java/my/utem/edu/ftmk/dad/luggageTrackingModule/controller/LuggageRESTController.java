@@ -24,10 +24,10 @@ public class LuggageRESTController {
 	@Autowired
 	private LuggageRepository luggageRepository;
 	
-	@DeleteMapping("{LuggageID}")
-	public ResponseEntity<HttpStatus> deleteLuggage(@PathVariable long LuggageID)
+	@DeleteMapping("{LuggageId}")
+	public ResponseEntity<HttpStatus> deleteLuggage(@PathVariable long luggageId)
 	{
-		luggageRepository.deleteById(LuggageID);
+		luggageRepository.deleteById(luggageId);
 		
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -38,10 +38,10 @@ public class LuggageRESTController {
 		return luggageRepository.findAll();
 	}
 	
-	@GetMapping ("{LuggageID}")
-	public Luggage getLuggage(@PathVariable long LuggageID )
+	@GetMapping ("{LuggageId}")
+	public Luggage getLuggage(@PathVariable long luggageId )
 	{
-		Luggage luggage = luggageRepository.findById(LuggageID).get();
+		Luggage luggage = luggageRepository.findById(luggageId).get();
 		
 		return luggage;
 	}
@@ -57,5 +57,5 @@ public class LuggageRESTController {
 	{
 		return luggageRepository.save(luggage);
 	}
-	
+
 }

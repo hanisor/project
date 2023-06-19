@@ -25,7 +25,7 @@ public class AirportRESTController {
 	@Autowired
 	private AirportRepository airportRepository;
 	
-	@DeleteMapping("{AirportId}")
+	@DeleteMapping("{AirportID}")
 	public ResponseEntity<HttpStatus> deleteAirport(@PathVariable long airportId)
 	{
 		airportRepository.deleteById(airportId);
@@ -39,7 +39,7 @@ public class AirportRESTController {
 		return airportRepository.findAll();
 	}
 	
-	@GetMapping ("{AirportId}")
+	@GetMapping ("{AirportID}")
 	public Airport getAirport(@PathVariable long airportId )
 	{
 		Airport airport = airportRepository.findById(airportId).get();

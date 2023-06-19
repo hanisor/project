@@ -1,6 +1,6 @@
 <header th:fragment="header">
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" th:href="@{/passenger/list}">
+    <a class="navbar-brand" th:href="@{/airport/list}">
       Master Information
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
@@ -10,41 +10,39 @@
       <ul class="navbar-nav">
       	<!-- A menu link to lists airport  -->
        
-     <!--<li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" th:href="@{/passenger/list}">Passengers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/cp1/list}"> list Checkpoint 1</a>
+          <a class="nav-link" th:href="@{/checkpoint1/list}">Checkpoints</a>
         </li>
+        
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/luggage/list}">Luggage</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/cp2/list}">list checkpoint 2</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" th:href="@{/flight/list}">list flight</a>
+          <a class="nav-link" th:href="@{/trackingrecords/list}">Checkpoints</a>
         </li>
         
         <!-- A menu link to add a new passenger-->
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/passenger/0}">Passenger Registration</a>
-        </li> -->
         
-        <!-- A menu link to add a new luggage-->
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/luggage/0}">Luggage Registration</a>
+          <a class="nav-link" th:href="@{/checkpoint1/0}">Add new</a>
+          
+          <a class="nav-link" th:href="@{/checkpoint3/list}">Checkpoint 3</a>
         </li>
         
-        <!-- A menu link to add a new checkpoint-->
+        <!-- A menu link to add a new checkpoint3 -->
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/cp1/0}">Checkpoint 1</a>
+          <a class="nav-link" th:href="@{/checkpoint3/0}">Add Truck ID</a>
         </li>
-       
-        <!-- A menu link to add a new checkpoint2-->
+        
+        <!-- A menu link to add a new checkpoint4 -->
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/cp2/0}">Checkpoint 2</a>
-        </li> 
+          <a class="nav-link" th:href="@{/checkpoint4/list}">Checkpoint 4</a>
+        </li>
+        
+        <!-- A menu link to add a new checkpoint4 -->
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/checkpoint4/0}">Add Flight</a>
+        </li>
         
       </ul>
     </div>

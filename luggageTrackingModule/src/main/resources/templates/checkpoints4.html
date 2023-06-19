@@ -19,7 +19,7 @@
   <div th:replace="fragments/header :: header"></div>
 
   <div class="container-fluid" style="max-width: 900px; margin: 0 auto;">
-    <h2 class="text-center">CHECKPOINT 1</h2>
+    <h2 class="text-center">List of Checkpoint 4</h2>
 
     <div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
       role="alert">
@@ -47,36 +47,38 @@
       </form>
     </div> -->
 
-    <div th:if="${checkpoints1.size() > 0}">
+    <div th:if="${checkpoints4.size() > 0}">
       <table class="table table-hover table-responsive-xl">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Checkpoint ID</th>
+            <th scope="col">Flight ID</th>
+            <th scope="col">Luggage ID</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
-            <th scope="col">Airport ID</th>
-            <th scope="col">Luggage ID</th>
+<!--             <th scope="col">Departing Date</th> -->
+<!--             <th scope="col">Arriving Date</th> -->
           </tr>
         </thead>
         <tbody>
-          <tr th:each="checkpoint1 : ${checkpoints1}">
-            <th scope="row">[[${checkpoint1.getCheckpoint1Id()}]]</th>
-            <td>[[${checkpoint1.getCheckpointDate()}]]</td>
-            <td>[[${checkpoint1.getCheckpointTime()}]]</td>
-            <td>[[${checkpoint1.getAirport().getAirportId()}]]</td>
-            <td>[[${checkpoint1.getLuggage().getLuggageId()}]]</td>
+          <tr th:each="checkpoint4 : ${checkpoints4}">
+            <th scope="row">[[${checkpoint4.FlightID}]]</th>
+            <td>[[${checkpoint4.getLuggageID()}]]</td>
+            <td>[[${checkpoint4.getDate()}]]</td>
+            <td>[[${checkpoint4.getTime()}]]</td>
+            
+    
             <td>
-              <!-- A link to edit an order type -->
-              < <a th:href="@{'/checkpoint1/' + ${checkpoint1.Checkpoint1Id}}" 
-              	title="Edit this checkpoint"
+              <!-- A link to edit an checkpoint4 -->
+              <a th:href="@{'/checkpoint4/' + ${checkpoint4.FlightID}}" 
+              	title="Edit this checkpoint4"
                 class="fa-regular fa-pen-to-square icon-dark"></a>
-              &nbsp; >
+              &nbsp; 
               
-              <!-- A link to delete an order type -->
-              <a th:href="@{'/checkpoint1/delete/' + ${checkpoint1.Checkpoint1Id}}" 
-              <h:checkpointName="${checkpoint1.CheckpointName}" id="btnDelete"
-                title="Delete this checkpoint" 
-                class="fa-regular fa-trash-can icon-dark btn-delete"></a>
+              <!-- A link to delete an checkpoint4 -->
+               <a th:href="@{'/checkpoint4/delete/' + ${checkpoint4.FlightID}}" 
+              th:FlightID="${checkpoint4.FlightID}" id="btnDelete"
+                title="Delete this checkpoint4" 
+                class="fa-regular fa-trash-can icon-dark btn-delete"></a> 
 
             </td> 
           </tr>
@@ -84,7 +86,7 @@
       </table>
     </div>
 
-    <div class="" th:unless="${checkpoints1.size() > 0}">
+    <div class="" th:unless="${checkpoints4.size() > 0}">
       <span>No record found!</span>
     </div>
   </div>
@@ -119,21 +121,19 @@
         e.preventDefault();
         link = $(this);
 
-        checkpointId = link.attr("CheckpointId");
+        checkpoint4FlightID = link.attr("FlightID");
         $("#yesBtn").attr("href", link.attr("href"));
-        $("#confirmText").html("Do you want to delete the  \<strong\>" + CheckpointId + "\<\/strong\>?");
+        $("#confirmText").html("Do you want to delete the  \<strong\>" + checkpoint4FlightID + "\<\/strong\>?");
         $("#confirmModal").modal();
       });
 
       $("#btnClear").on("click", function (e) {
         e.preventDefault();
         $("#keyword").text("");
-        window.location = "[[@{/checkpoint1/list}]]";
+        window.location = "[[@{/checkpoint4/list}]]";
       });
     });
   </script>
-  
-  
 
 </body>
 
